@@ -1,0 +1,15 @@
+{
+  "name": "middlewares",
+  "version": "1.0.0",
+  "description": "the middlewares analysis of koa, express, redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "array-flatten": "^2.1.1",
+    "merge-descriptors": "^1.0.1"
+  }
+}
