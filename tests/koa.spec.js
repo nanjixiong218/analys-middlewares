@@ -1,6 +1,5 @@
-var Koa = require('../src/koa/application.js')
-// var express = require('expresss')
-
+// var Koa = require('../src/koa/application.js')
+var Koa = require('koa')
 var app = new Koa()
 app.listen(3000)
 
