@@ -55,16 +55,23 @@ function applyMiddleware(...middlewares) {
   return createStore => (...args) => {
     const store = createStore(...args)
 
+    
+    let dispatch = () => { 
+      throw new Error(
+        `Dispatching while constructing your middleware is not allowed. ` +
+          `Other middleware would not be applied to this dispatch.`
+      )
+    }
+
     const middlewareAPI = {
       getState: store.getState,
-      dispatch:  () => { // 这个 dispatch 无用, 不知道为什么要传TODO:
-        throw new Error(
-          `Dispatching while constructing your middleware is not allowed. ` +
-            `Other middleware would not be applied to this dispatch.`
-        )
-      }
+      // 这里很关键，也很巧妙! 没有使用store.dispatch 而是用了一个 `dispatch` 变量，下面会被compose的dispatch覆盖，
+      // 这样传入 middlware 的第一个参数中的 dispatch 即为覆盖后的dispatch, 
+      // 对于类似 redux-thunk 这样的中间件，内部会调用 'store.dispatch', 使得其同样会走一遍所有中间件
+      dispatch: (...args) => dispatch(...args)
     }
-    // 应用中间件的第层参数，其实就是把 getState 传递给中间件使用 TODO: 为什么要颗粒胡层两层参数传递
+
+    // 应用中间件的第一层参数, 为了给中间件暴露store的getState和dispatch方法
     const chain = middlewares.map(middleware => middleware(middlewareAPI))
 
     // redux中间件的核心就是复写 dispatch
