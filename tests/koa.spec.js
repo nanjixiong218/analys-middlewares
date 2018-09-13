@@ -1,7 +1,9 @@
 var Koa = require('../src/koa/application.js')
 // var Koa = require('koa')
 var app = new Koa()
-app.listen(3000)
+app.listen(3000, function() {
+  console.log('请打开: http://127.0.0.1:3000')
+})
 
 
 app.use(async function(ctx, next){

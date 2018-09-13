@@ -35,8 +35,7 @@ function createStore(reducer, preloadedState, enhancer) {
 }
 
 /**
- * from right to left. For example, compose(f, g, h) is identical to doing
- * (...args) => f(g(h(...args))).
+ * compose(f, g, h) => (...args) => f(g(h(...args)))
  */
 
 function compose(...funcs) {
@@ -73,10 +72,11 @@ function applyMiddleware(...middlewares) {
     // 应用中间件的第一层参数, 为了给中间件暴露store的getState和dispatch方法
     const chain = middlewares.map(middleware => middleware(middlewareAPI))
 
-    // redux中间件的核心就是复写 dispatch
-    // 这里传入的store.dispatch 是redux最原生的dispatch，是有用的，把它传递给第一个中间件
-    // 每一个中间件都会返回一个新的dispatch给下一个中间件
-    // compose 带来的就是剥洋葱似的函数调用
+    // compose 带来的就是剥洋葱似的函数调用 compose(f, g, h) => (...args) => f(g(h(...args)))
+    // redux 中间件的核心就是复写 dispatch
+    // 把 store.dispatch 传递给第一个中间件
+    // 每一个中间件都会返回一个新的 dispatch 传递给下一个中间件
+    
     dispatch = compose(...chain)(store.dispatch)
     
     return {

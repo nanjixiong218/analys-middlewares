@@ -51,9 +51,9 @@ module.exports = class Application extends Emitter {
   /**
    * Initialize a new context.
    *
-   * 源码中会有koa 的request和response对象的封装，
-   * 然后将context, request, response ,原生的req, res, 彼此进行一系列的关联
-   * 这里只留下req和res 用于ctx的代理
+   * 源码中会有 koa 的 request 和 response 对象的封装，
+   * 然后将 context, request, response , 原生的 req , res , 彼此进行一系列的关联
+   * 这里只留下 req 和 res 用于 ctx 的代理
    * @api private
    */
 
@@ -68,8 +68,8 @@ module.exports = class Application extends Emitter {
 
 /**
  * Response helper.
- * 源码中这里是响应处理，主要是对body的各类处理和异常处理
- * 我们就直接输出body了
+ * 源码中这里是响应处理，主要是对 body 的各类处理和异常处理
+ * 我们就简单直接输出body了
  */
 
 function respond(ctx) {

@@ -2,7 +2,9 @@ var express = require('../src/express/express.js')
 // var express = require('expresss')
 
 var app = express()
-app.listen(3000)
+app.listen(3000, function() {
+  console.log('请打开: http://127.0.0.1:3000')
+})
 
 
 app.use(function(req, res, next){
