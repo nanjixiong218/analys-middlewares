@@ -4,14 +4,12 @@ var redux = require('redux')
 var { createStore, applyMiddleware } = redux
 
 const middleware1 = store => next => action => {
-  // 每一个 next 都是 上一个 中间件
   console.log('before1')
   next(action)
   console.log('after1')
 }
 
 const middleware2 = store => next => action => {
-  // 每一个 next 都是 上一个 中间件
   console.log('before2')
   next(action)
   console.log('after2')

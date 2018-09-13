@@ -55,7 +55,6 @@ function applyMiddleware(...middlewares) {
   return createStore => (...args) => {
     const store = createStore(...args)
 
-    
     let dispatch = () => { 
       throw new Error(
         `Dispatching while constructing your middleware is not allowed. ` +

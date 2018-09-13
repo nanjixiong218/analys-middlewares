@@ -6,17 +6,23 @@ app.listen(3000)
 
 
 app.use(function(req, res, next){
-  console.log(1)
+  console.log('before1')
   next()
   console.log('after1')
 })
-app.use(async function(req, res, next){
-  console.log(2)
+// app.use(async function(req, res, next){
+//   console.log('before2')
+//   await 1
+//   next()
+//   console.log('after2')
+// })
+app.use(function(req, res, next){
+  console.log('before3')
   next()
-  console.log('after2')
+  console.log('after3')
 })
 app.use(function(req, res, next){
-  console.log(3)
+  console.log('before4')
   res.end('hello')
-  console.log('after3')
+  console.log('after4')
 })

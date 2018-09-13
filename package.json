@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanjixiong218/analys-middlwares"
+  },
+  "author": {
+    "name": "许会元",
+    "email": "695540791@qq.com",
+    "url": "https://github.com/nanjixiong218"
+  },
+  "license": "MIT",
   "dependencies": {
     "array-flatten": "^2.1.1",
     "debug": "^3.1.0",
