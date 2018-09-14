@@ -5,13 +5,13 @@
 
 ## 说明
 
-`src` 中分别是`express`, `koa`, `redux`的模拟实现
+`src` 中分别是`express`, `koa`, `redux`的模拟实现
 
-`test` 文件夹中是三者的使用实例
+`test` 文件夹中是三者的使用实例
 
 ## 运行
 
-`npm install` 后直接对应运行`test`目录下的文件即可，然后查看控制台输出
+`npm install` 后直接对应运行`test`目录下的文件即可，然后查看控制台输出
 
 ### express
 
@@ -37,4 +37,4 @@
 
 查看控制台输出
 
-** 每个 test 文件 里面都可以替换为真正的 `express`, `koa`, `redux` 对比运行效果 **
+**每个 test 文件里面都可以替换为真正的 `express`, `koa`, `redux` 对比运行效果**
