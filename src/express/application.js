@@ -31,10 +31,12 @@ app.handle = function(req, res, callback) {
       return;
     }
     var mid;
-    while(idx < stack.length) {
-      mid = stack[idx++];
-      mid(req, res, next);
-    }
+    // while(idx < stack.length) { bug fixed issue https://github.com/nanjixiong218/analys-middlewares/issues/1
+    //   mid = stack[idx++];
+    //   mid(req, res, next);
+    // }
+    mid = stack[idx++];
+    mid(req, res, next);
   }
   next()
 }
