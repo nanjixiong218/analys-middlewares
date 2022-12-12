@@ -20,7 +20,7 @@
     "array-flatten": "^2.1.1",
     "debug": "^3.1.0",
     "delegates": "^1.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "koa": "^2.11.0",
     "merge-descriptors": "^1.0.1",
     "redux": "^4.0.0"
